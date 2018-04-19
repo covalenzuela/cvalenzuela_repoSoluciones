@@ -1,0 +1,87 @@
+Algoritmos Narrados
+
+Ejercicio 1
+1) Inicio programa
+2) Definir variables tipo float (calificacion 1, calificacion 2, calificacion 3, suma, promedio) y tipo int (matricula).
+3) Recibir valores 
+4) Guardar valores
+5) Realizar operaciones (suma calificaciones y calculo de promedio)
+6) Mostrar en pantalla (matricula y promedio)
+7) Fin del programa
+
+Ejercicio 2
+1) Inicio programa
+2) Definir variables tipo int (número, cuadrado y cubo).
+3) Recibir y guardar valor
+4) Realizar operaciones (cuadrado y cubo de el número)
+5) Mostrar en pantalla (cuadrado y cubo de el número)
+6) Termino del programa
+
+Ejercicio 3
+1) Inicio programa
+2) Declarar variables tipo float (cateto 1, cateto 2, hipotenusa)
+3) Recibir y guardar valores
+4) Calcular la variable hipotenusa
+5) Mostar en pantalla (hipotenusa al cuadrado)
+6) Fin del programa
+
+Ejercicio 4
+1) Inicio programa
+2) Declarar variables tipo float (base, altura, perimetro, superficie)
+3) Recibir y guardar valores
+4) Calcular variables (superficie y perimetro)
+5) Mostrar en pantalla (superficie y perimetro)
+6) Terminar programa
+
+Ejercicio 5
+1) Iniciar programa
+2) Definir variables tipo float (peso, longitud, libras,pies) y char (nombre del dinosaurio)
+3) Recibir y guardar datos
+4) Realizar operaciones (calcular peso y longitud)
+5) Mostrar en pantalla (peso y longitud)
+6) Terminar programa
+
+Ejercicio 6
+1) Inicio programa
+2) Definir variables tipo float (litros) y tipo int (galones, valor_litro)
+3) Recibir valores 
+4) Guardar valores
+5) Realizar operaciones (calcular litros y valor_litro)
+6) Mostrar en pantalla (cantidad de litros surtidos y valor de la compra)
+7) Fin del programa
+
+Ejercicio 7
+1) Inicio programa
+2) Definir variables tipo int (días y calculo).
+3) Recibir valores 
+4) Guardar valores
+5) Realizar operación de conversión de dias a segundos
+6) Mostrar en pantalla (tiempo en segundos)
+7) Fin del programa
+
+Ejercicio 8
+1) Inicio programa
+2) Definir variables tipo int (“x” e “y”).
+3) Recibir y guardar valores
+4) Realizar operación ( y= (x*x*x)+(2*x*x)+(3*x)+5 )
+5) Mostrar en pantalla (resultado de la operación)
+6) Fin del programa
+
+Ejercicio 9
+1) Inicio programa
+2) Definir variables tipo int (sueldo_bruto, sueldo_total, ventas, comisión).
+3) Recibir y guardar valores
+4) Realizar calculos de variable comision y sueldo_total
+5) Mostrar en pantalla (variable comision y sueldo_total)
+6) Fin del programa
+
+Ejercicio 10
+1) Inicio programa
+2) Definir variables tipo int (kilometros, costo_kilometro, costo_boleto).
+3) Recibir valores 
+4) Guardar valores
+5) Realizar operación (costo del boleto)
+6) Mostrar en pantalla (precio del boleto)
+7) Fin del programa
+
+
