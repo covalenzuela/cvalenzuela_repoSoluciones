@@ -1,74 +1,63 @@
-// inicia programa
-//creacion de funcion para un numero aleatorio con retorno
-//crear una funcion main declarar variables tipo entero
-//
-//
-// 
-//
+//inicio programa
+//crear una funcion para un numero aleatorio y retornarla
+//crear una funcion main donde se declaran variables tipo entero y de caracter
+//ralizar un ciclo while para preguntar la continuidad del programa (si el usuario quiere continuar)
+//en el caso de que se continue se preguntara denuevo por quien votará
+//crear un contador que guardará las veces que se gane y pierda, si se empata no se guarda
+//imprimir en pantalla las veces que se gana
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-int secuencia(int n) {
-	
+int numaleatorio (){
 	int numero;
-	int c;
-	int siguiente;
-	int primero;
-	int segundo;
-	
-	siguiente=0;
-	primero=0;
-	segundo=1;
-	
-	printf("Ingrese el numero: ");
-	scanf(" %d", &numero);
+	numero = rand()%100;
+	return numero;
+}
 
-	printf("La secuencia para el numero %d es:\n ", numero);
+int main ()
+{
+	int a,b;
+	char opcion;
+	char fin='S';
+	int ganador;
+	int perdedor;
+	ganador=0;
+	perdedor=0;
+	srand (time(NULL));
+	
+	while (fin=='S'){
+		printf("A o B\n");
+		scanf(" %c", &opcion);
+		a=numaleatorio();
+		b=numaleatorio();
+		printf ("el numero generado para a es: %d\n",a);
+		printf ("el numero generado para b es: %d\n",b);
+		if (opcion=='a' && a>b){
+			ganador++;
 		
+			printf("HAS GANADO \n");
+		}
+			else if (opcion== 'b'&& b>a){
+				ganador++;
+			
+			printf("HAS GANADO \n");
+			
+		}
+		else {
+			perdedor++;
+			printf("HAS PERDIDO\n");
 		
-for (c=0; c<numero; c++){
-	if (c<=1)
-	siguiente= c;
-	else {
-		siguiente= primero+ segundo;
-		primero= segundo;
-		segundo= siguiente;
+		printf ("Quieres probar otra vez? (S/N): \n");
+		scanf (" %c",&fin);
+		while(getchar()!='\n');
+	
 	}
-	printf(" %d",siguiente);
+	printf("HAS GANADO ESTE NUMERO DE VECES: %d",ganador);
 }
 	
 	
-	return n;
-}
-
-int main (){ 
-
-	int numero;
-	int c;
-	int siguiente;
-	int primero;
-	int segundo;
-	
-	siguiente=0;
-	primero=0;
-	segundo=1;
-	
-	printf("Ingrese el numero: ");
-	scanf(" %d", &numero);
-
-	printf("La secuencia para el numero %d es:\n ", numero);
-		
-		
-for (c=0; c<numero; c++){
-	if (c<=1)
-	siguiente= c;
-	else {
-		siguiente= primero+ segundo;
-		primero= segundo;
-		segundo= siguiente;
-	}
-	printf(" %d",siguiente);
-}
-return 0;
+	return 0 ;
 }
 
