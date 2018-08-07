@@ -1,0 +1,23 @@
+ CONECTA 4
+
+Jugadores	2 jugadores
+Edades	        +6
+Complejidad	Baja
+Estrategia	Media
+Habilidades	Estrategia abstracta
+
+¿Cómo jugar?
+En pantalla se mostrará un tablero con dimensiones 8*8, el cual esta lleno de puntos los que indicarán 
+La posición que tendrán las fichas de los jugadores (X y 0).
+Debajo de el tablero se muestra un sorteo entre el jugador 0 y 1, indicando que jugador tendrá el primer movimiento.
+El jugador escoge una columna donde poner su ficha, las que oscilan entre 0 y 7 (de izquierda a derecha).
+La ficha correspondiente se marcará en el tablero y solicitará un movimiento de otro jugador.
+Los demás turnos se realizarán alternadamente.
+La regla para colocar las fichas consiste en que estas siempre "caen hasta abajo". 
+Es decir una ?cha puede ser colocada bien en la parte inferior de una columna o bien sobre otra de alguna otra columna. 
+
+
+¿Cómo se termina el juego?
+La partida termina cuando una de las siguientes condiciones se cumple:
+	1. Uno de los jugadores coloca cuatro o más ?chas en una línea continua (vertical, horizontal o diagonal). Este jugador gana la partida.
+	2. Todas las casillas del tablero están ocupadas y ningún jugador cumple la condición anterior para ganar. En este caso la partida ?naliza en empate.
