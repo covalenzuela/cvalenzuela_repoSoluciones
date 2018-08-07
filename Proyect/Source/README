@@ -6,18 +6,20 @@ Complejidad	Baja
 Estrategia	Media
 Habilidades	Estrategia abstracta
 
-øCÛmo jugar?
-En pantalla se mostrar· un tablero con dimensiones 8*8, el cual esta lleno de puntos los que indicar·n 
-La posiciÛn que tendr·n las fichas de los jugadores (X y 0).
-Debajo de el tablero se muestra un sorteo entre el jugador 0 y 1, indicando que jugador tendr· el primer movimiento.
+¬øC√≥mo jugar?
+En pantalla se mostrar√° un tablero con dimensiones 8*8, el cual esta lleno de puntos los que indicar√°n 
+La posici√≥n que tendr√°n las fichas de los jugadores (X y 0).
+Debajo de el tablero se muestra un sorteo entre el jugador 0 y 1, indicando que jugador tendr√° el primer movimiento.
 El jugador escoge una columna donde poner su ficha, las que oscilan entre 0 y 7 (de izquierda a derecha).
-La ficha correspondiente se marcar· en el tablero y solicitar· un movimiento de otro jugador.
-Los dem·s turnos se realizar·n alternadamente.
+La ficha correspondiente se marcar√° en el tablero y solicitar√° un movimiento de otro jugador.
+Los dem√°s turnos se realizar√°n alternadamente.
 La regla para colocar las fichas consiste en que estas siempre "caen hasta abajo". 
 Es decir una ?cha puede ser colocada bien en la parte inferior de una columna o bien sobre otra de alguna otra columna. 
 
 
-øCÛmo se termina el juego?
+¬øC√≥mo se termina el juego?
 La partida termina cuando una de las siguientes condiciones se cumple:
-	1. Uno de los jugadores coloca cuatro o m·s ?chas en una lÌnea continua (vertical, horizontal o diagonal). Este jugador gana la partida.
-	2. Todas las casillas del tablero est·n ocupadas y ning˙n jugador cumple la condiciÛn anterior para ganar. En este caso la partida ?naliza en empate.
+	1. Uno de los jugadores coloca cuatro o m√°s ?chas en una l√≠nea continua (vertical, horizontal o diagonal). Este jugador gana la partida.
+	2. Todas las casillas del tablero est√°n ocupadas y ning√∫n jugador cumple la condici√≥n anterior para ganar. En este caso la partida ?naliza en empate.
+
+Autor: Constanza Valenzuela A
