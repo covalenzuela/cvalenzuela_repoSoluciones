@@ -20,6 +20,6 @@ Es decir una ?cha puede ser colocada bien en la parte inferior de una columna o 
 ¿Cómo se termina el juego?
 La partida termina cuando una de las siguientes condiciones se cumple:
 	1. Uno de los jugadores coloca cuatro o más ?chas en una línea continua (vertical, horizontal o diagonal). Este jugador gana la partida.
-	2. Todas las casillas del tablero están ocupadas y ningún jugador cumple la condición anterior para ganar. En este caso la partida ?naliza en empate.
+	2. Todas las casillas del tablero están ocupadas y ningún jugador cumple la condición anterior para ganar. En este caso la partida se empata.
 
 Autor: Constanza Valenzuela A
