@@ -1,0 +1,41 @@
+# Maze
+Jugadores	1 jugador
+Edades	 +6
+Complejidad	Baja
+Estrategia	Media
+Habilidades	Estrategia abstracta
+
+Maze es un juego de un laberinto sencillo formado artificiosamente por muros (bloques azules), encrucijadas y caminos sin salida para confundir al jugador en su busqueda por la meta.
+
+# Obtención del juego
+Clonar este repositorio y ejecutar "python maze.py" dentro de la carpeta "Proyect1".
+
+# Prerrequisitos
+- Python 3. Desarrollado y probado en 3.5.6.
+- Módulo de programación gráfica Turtle
+- Biblioteca gráfica Tkinter
+
+# Objetivo
+Guía a Kirby a traves del laberinto desde el punto de inicio hasta la meta marcado con una estrella. 
+El juego no incluye la característica de temporizador, por lo que el jugador debe depender de su paciencia y precisión para llegar al otro extremo. 
+
+# Controles
+El laberinto se cotrola con teclas direccionales: flechas o las teclas A, S, D, W.
+El menú del juego se controla a traves de opciones numéricas.
+
+# Sobre el código
+En primer lugar, se creó el laberinto usando la biblioteca TURTLE para mostrar el mapa en una ventana distinta de la terminal con el fin de hacer el juego más agradable a la vista, estableciendose un mapa con 25 bloques de ancho y 25 de largo (24 píxeles cada uno) los cuales hacen alusión a muros por los cuales no se puede transitar, pero sí entre ellos. El mapa se guarda en un listado de mapas con la idea de crear más niveles.
+Se establecen los atributos de los objetos Pen (dibuja el laberinto) y Player (jugador) junto con sus respectivas propiedades como su forma, velocidad, etc. Se inicializan con el comando especial "__init__(self)".
+Luego se posiciona al jugador en el tablero, el cual es posible de mover utilizando las teclas direccionales utilizando el comando "turtle.listen()" y  "turtle.onkey(player.X)", en este caso X representa a los posibles movimientos creados anteriormente, es decir, arriba, abajo, izquierda y derecha utilizando las flechas del teclado, de la misma manera se hace lo mismo con las teclas W, S, A y D respectivamente. Se limitan los movimientos que puede esfectuar el jugador utilizando el comando "self.goto" en la funcion "class" de Player, para estos se penso en el mapa conmo si fuera un plano cartesiano. A medida que se ingresa un movimiento se comprobará si el movimiento se comprobará si este es válido, es decir, la ausencia de un muro. Para hacer esta comprobacion más rápida se creó una lista "wall" donde se ingresan todas las coordenadas de cada muro. 
+Para la creacion de la meta se pensó inicialmente como si fuera un muro pero especial por lo que se hizo un listado "end" para guardar esta coordenada y luego se le estableció su forma (estrella).
+Para determinar si el jugador llega a la meta se define dentro de Player la funcion "is_collision", la que comprueba que la meta y el jugador estan en la misma posisción. Para hacer esto más simple se establece como boolean, donde si se cumple la condición se imprimirá en la terminal un mensaje para el jugador, "ganaste".
+Se llama al laberinto con el comando "setup_maze" para ejecutalo, esto imprime todo lo que se ha escrito en el mapa y sus retricciones.
+Posteriormente se crea un Loop para que mientras se esta ejecutando el código se abra una ventana aparte de la terminal con el juego y se busque constantemente la colisión con la meta.
+Al final del código se encuentra un menú, el cual se ejecuta por la terminal, con 4 opciones: jugar, recrear la ruta del jugador, instrucciones y salir.
+En cuanto a la opción de recrear la ruta solo fue necesario cambiar el color del fondo de el laberinto, de negro a gris, para visualisar el recorrido. Un inconveniente de Turtle es que trata al mapa como un plano cartesiano por lo que el jugador originalmente debería de haber estado en la posición (0,0) al centro del mapa y se trazaría una línea hasta la posición establecida por el creador. Esto lo solucioné levantando pen al inicio del código cuando creamos a Player, con el comando "self.penup()" y bajandolo cuando llegue a su posición establecida con "player.pd()" justo debajo de "setup_maze".
+Para volver a jugar el laberinto se usa el comando "wn.clear()", donde wn es el nombre de la ventana que se abre con la terminal, este comando se deshacerse de lo último que la tortuga había dibujado.
+
+# Errores del programa:
+- Al momento de elegir una opción en el menú del juego se ha de evitar presionar cualquier otra tecla distinta de un numero, puesto que no las reconocerá y no funcionará correctamente. Se soluciona volviendo a ejecutar el programa e ingresando un parámetro válido.
+- Luego de alcanzar la meta el jugador puede continuar moviendose por el laberinto.
+- Desde el inicio se ve en el menú de la terminal la opción de recrear la ruta, la cual no es válida hasta luego de completar el laberinto, en caso de ejecutala antes de jugar esta mostrará un error y se tendra que volver a cargar el programa.
