@@ -8,58 +8,56 @@ class maze():
 		turtle.register_shape("kirby.gif")
 		turtle.register_shape("wall3.gif")
 		
-		#create Pen
-		class Pen(turtle.Turtle):
+		#create Drawing
+		class Drawing(turtle.Turtle):
 			def __init__(self): #special comand
 				turtle.Turtle.__init__(self)
 				self.shape("square")
-				#self.color("white")
 				self.penup()
 				self.speed(0)
 
-		#create player
+		#create player object
 		class Player(turtle.Turtle):
 			def __init__(self):
 				turtle.Turtle.__init__(self)
 				self.shape("kirby.gif")
-				#self.color("green")
 				self.pencolor("black")
 				self.penup()		
 				self.speed(0)
 			
-			def go_up(self):
-				move_to_x = player.xcor()
-				move_to_y = player.ycor() + 24
+			def move_up(self):
+				go_to_x = player.xcor()
+				go_to_y = player.ycor() + 24
 			
-				if (move_to_x, move_to_y) not in walls:
-					self.goto(move_to_x, move_to_y)
+				if (go_to_x, go_to_y) not in walls:
+					self.goto(go_to_x, go_to_y)
 				
-			def go_down(self):
-				move_to_x = player.xcor()
-				move_to_y = player.ycor() - 24
+			def move_down(self):
+				go_to_x = player.xcor()
+				go_to_y = player.ycor() - 24
 				
-				if (move_to_x, move_to_y) not in walls:
-					self.goto(move_to_x, move_to_y)
+				if (go_to_x, go_to_y) not in walls:
+					self.goto(go_to_x, go_to_y)
 				
-			def go_left(self):
-				move_to_x = player.xcor() - 24
-				move_to_y = player.ycor()
+			def move_left(self):
+				go_to_x = player.xcor() - 24
+				go_to_y = player.ycor()
 				
 				self.shape("kirby.gif")
  
-				if (move_to_x, move_to_y) not in walls:
-					self.goto(move_to_x, move_to_y)
+				if (go_to_x, go_to_y) not in walls:
+					self.goto(go_to_x, go_to_y)
 
-			def go_right(self):
-				move_to_x = player.xcor() + 24
-				move_to_y = player.ycor()
+			def move_right(self):
+				go_to_x = player.xcor() + 24
+				go_to_y = player.ycor()
 				
 				self.shape("kirby.gif")
  				
-				if (move_to_x, move_to_y) not in walls:
-					self.goto(move_to_x, move_to_y)
+				if (go_to_x, go_to_y) not in walls:
+					self.goto(go_to_x, go_to_y)
 					
-			def is_collision(self, other):
+			def collisions(self, other):
 				if (self.xcor(), self.ycor()) in other:
 					print("GANASTE")
 					return True
@@ -75,10 +73,7 @@ class maze():
 		
 		self.window = wn
 				
-
-		#create levels list
-		levels = [""]
-
+    
 		#define level 1
 		level_1 = [
 		"XXXXXXXXXXXXXXXXXXXXXXXXX",
@@ -111,11 +106,9 @@ class maze():
 		#add a end list
 		end = []
 
-		#add maze to the list
-		levels.append(level_1)
 
 		#create level setup Function
-		def setup_maze(level):
+		def start_up_maze(level):
 			for y in range(len(level)):
 				for x in range(len(level[y])):
 					#get the character at each x,y coordinate
@@ -127,9 +120,9 @@ class maze():
 					
 					#check if is X (wall)
 					if character == "X":
-						pen.goto(screen_x, screen_y)
-						pen.shape("wall3.gif")
-						pen.stamp()
+						pencil.goto(screen_x, screen_y)
+						pencil.shape("wall3.gif")
+						pencil.stamp()
 						walls.append((screen_x,screen_y))
 
 					#check if is a P (player)
@@ -138,41 +131,41 @@ class maze():
 					
 					#check if is a E (end)
 					if character == "E":
-						pen.shape("star.gif")
-						pen.goto(screen_x, screen_y)
-						pen.stamp()
+						pencil.shape("star.gif")
+						pencil.goto(screen_x, screen_y)
+						pencil.stamp()
 						end.append((screen_x, screen_y))
 
 		#create class instances
-		pen = Pen()
+		pencil = Drawing()
 		player = Player()
 
 		walls = []
 
-		#Set up level
-		setup_maze(levels[1])
+		#Start up level
+		start_up_maze(level_1)
 		player.pd()
 		#print(walls)
 
 		#Controls
 		turtle.listen()
-		turtle.onkey(player.go_left,"Left")
-		turtle.onkey(player.go_right,"Right")
-		turtle.onkey(player.go_down,"Down")
-		turtle.onkey(player.go_up,"Up")
+		turtle.onkey(player.move_left,"Left")
+		turtle.onkey(player.move_right,"Right")
+		turtle.onkey(player.move_down,"Down")
+		turtle.onkey(player.move_up,"Up")
 
 		#or
-		turtle.onkey(player.go_left,"a")
-		turtle.onkey(player.go_right,"d")
-		turtle.onkey(player.go_down,"s")
-		turtle.onkey(player.go_up,"w")
+		turtle.onkey(player.move_left,"a")
+		turtle.onkey(player.move_right,"d")
+		turtle.onkey(player.move_down,"s")
+		turtle.onkey(player.move_up,"w")
 
 		#Main Game Loop	
 		while True:		
 			#update screen
 			wn.update()
-			#check for player collision with end (call is_collision)
-			if player.is_collision(end):				
+			#verify for player collision with end (call collisions)
+			if player.collisions(end):				
 				break
 	def get_window(self):
 		return self.window
